@@ -23,10 +23,16 @@ public class Main {
         node.add(18);
         node.add(9);
         node.viewInorder();
-        System.out.println(" ");
         node.removeNode(5);
         node.removeNode(3);
         node.removeNode(18);
         node.viewInorder();
+        
+        
+        BinarySearchTree cloneNode = new BinarySearchTree();
+        cloneNode.setTreeCopy(node.getTreeCopy());
+        
+        cloneNode.viewInorder();
+        
     }
 }

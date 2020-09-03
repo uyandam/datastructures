@@ -18,6 +18,34 @@ public class BinarySearchTree {
     }
     */
     
+    
+    public void setTreeCopy(Node tree){
+        this.head = tree;
+    }
+    
+    public Node getTreeCopy(){
+        if (this.head == null){
+            return null;
+        }
+        
+        Node node = treeCopy(this.head);
+        
+        return node;
+    }
+    
+    
+    Node treeCopy(Node node){
+        if(node == null){
+            return null;
+        }
+        Node newNode = new Node(node.data);
+        
+        newNode.left = treeCopy(node.left);
+        newNode.right = treeCopy(node.right);
+        
+        return newNode;
+    }
+    
     public void add(int data){
         this.head = insertRecord(this.head, data);
     }
@@ -25,6 +53,7 @@ public class BinarySearchTree {
     public void viewInorder(){
         Node current = this.head;
         printInorder(current);
+        System.out.println("");
     }
     
     public void removeNode(int data){
@@ -32,6 +61,8 @@ public class BinarySearchTree {
         
         this.head = deleteNode(current, data);
     }
+    
+   
     
     private Node deleteNode(Node node, int data){
         
@@ -79,7 +110,7 @@ public class BinarySearchTree {
         printInorder(node.right);
     }
     
-    private Node insertRecord(Node root, int data){
+    public static Node insertRecord(Node root, int data){
        if (root == null){
            root = new Node(data);
            return root;
