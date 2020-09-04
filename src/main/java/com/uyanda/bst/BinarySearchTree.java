@@ -34,6 +34,22 @@ public class BinarySearchTree {
     }
     
     
+    public int getTreeHeight(){
+        return treeHeight(this.head);
+    }
+    int treeHeight(Node root){
+        if(root == null)
+            return 0;
+        
+        int leftHeight = treeHeight(root.left);
+        int rightHeight = treeHeight(root.right);
+        
+        if(leftHeight > rightHeight)
+            return leftHeight + 1;
+        else
+            return rightHeight + 1;
+    }
+    
     Node treeCopy(Node node){
         if(node == null){
             return null;
