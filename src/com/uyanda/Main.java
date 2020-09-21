@@ -5,6 +5,7 @@
  */
 package com.uyanda;
 import com.uyanda.bst.*;
+import com.uyanda.heap.*;
 /**
  *
  * @author uyanda
@@ -13,17 +14,15 @@ public class Main {
     public static void main (String [] args){
         System.out.println("Hello World!");
         
-        BinarySearchTree node = new BinarySearchTree();
-        node.add(10);
-        node.add(5);
-        node.add(15);
-        node.add(3);
-        node.add(7);
-        node.add(13);
-        node.add(18);
-        node.add(9);
-        
-        System.out.printf("Tree height %d ",node.getTreeHeight());
+       Heap heap = new Heap();
+       heap.add(12);
+       heap.add(17);
+       heap.add(40);
+       heap.add(3);
+       heap.add(13);
+       heap.add(19);
+       
+       heap.printList();
         
     }
 }
