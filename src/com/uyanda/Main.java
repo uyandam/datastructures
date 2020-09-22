@@ -23,6 +23,15 @@ public class Main {
        heap.add(19);
        
        heap.printList();
+       
+       System.out.println("------------");
+       heap.remove();
+       heap.remove();
+       heap.remove();
+       heap.remove();
+       heap.remove();
+       heap.remove();
+       heap.printList();
         
     }
 }
